@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en"dir="ltr">
+    <head>
+     <meta charset="utf-8">
+     <title>image slides</title>
+     <link rel="stylesheet"href="sytle.css">
+    </head>
+    <body>
+<!--slides show start-->
+<div class="slider">
+    <div class="slides">
+      <!--dot buttons-->  
+<input type="radio" name="radio-btn"id="radio1">
+<input type="radio" name="radio-btn"id="radio2">
+<input type="radio" name="radio-btn"id="radio3">
+<input type="radio" name="radio-btn"id="radio4">
+<div class="slide first">
+    <img src="aspire.jpg">
+</div>
+<div class="slide second">
+    <img src="ilovesupplyco.jpeg">
+</div>
+<div class="slide third">
+    <img src="newindia.jpeg">
+</div>
+<div class="slide fourth">
+    <img src=sunday_open1.jpg>
+</div>
+<div class="navigation.auto">
+    <div class="auto-btn1"></div>
+    <div class="auto-btn2"></div>
+    <div class="auto-btn3"></div>
+    <div class="auto-btn4"></div>
+</div>
+<div class="navigation-manual">
+    <label for="radio1"class="manual-btn "></label>
+    <label for="radio2"class="manual-btn "></label>
+    <label for="radio3"class="manual-btn "></label>
+    <label for="radio4"class="manual-btn "></label>
+</div>
+    </div>
+</div>
+<!--slides show ends-->
+<script type="text/JavaScript">
+    var counter=1;
+    setInterval(function() {
+        document.getElementById('radio'+counter).checked= true;
+    counter++;
+    if(counter > 4){
+       counter = 1; 
+    }
+    },5000);
+        
+
+</script>
+    </body>
+</html>

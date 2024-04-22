@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('loginwall.jpg'); /* Background image for login page */
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            /*background-color: rgba(225, 11, 11, 0.8);*/
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #ffffff;
+        }
+
+        .button {
+            padding: 15px 30px; /* Increased padding */
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #8a8484;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2><B>LOGIN INTO YOUR ACCOUNT</B></h2>
+        <form action="authenticate.php" method="post">
+            <input type="text" name="username" placeholder="Username" required><br>
+            <input type="password" name="password" placeholder="Password" required><br>
+            <input type="submit" value="Login" class="button">
+        </form>
+    </div>
+</body>
+</html>

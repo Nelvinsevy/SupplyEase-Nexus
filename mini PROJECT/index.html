@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SupplyEase Nexus</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <style>
+        @font-face {
+            font-family: 'MyCustomFont';
+            src: url('path/to/mycustomfont.woff2') format('woff2'),
+                 url('path/to/mycustomfont.woff') format('woff');
+            /* Add additional font properties here if needed */
+        }
+        body {
+            font-family: 'MyCustomFont', sans-serif; /* Use custom font */
+            background-image: url('miniwall.jpg'); /* Correct syntax for background image */
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            /*background-color: rgba(255, 255, 255, 0.8);*/
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #ffffff;
+        }
+
+        .button {
+            padding: 15px 30px; /* Increased padding */
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: rgb(79, 79, 79,0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><b><i> WELCOME TO SUPPLY EASE NEXUS</i></b></h1>
+        <div>
+            <a href="login.html" class="button">Login</a>
+            <a href="register.html" class="button">Register</a>
+        </div>
+    </div>
+</body>
+</html>

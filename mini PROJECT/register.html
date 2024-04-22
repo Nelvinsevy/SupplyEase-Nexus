@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('regwall.jpg'); /* Background image for registration page */
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.5);
+            padding: 100px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #060606;
+        }
+
+        .button {
+            padding: 15px 30px; /* Increased padding */
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #777977;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>REFISTER TO YOUR ACCOUNT</h2>
+        <form action="registration.php" method="post">
+            <input type="text" name="name" placeholder="Name" required><br>
+            <input type="text" name="address" placeholder="Address" required><br>
+            <input type="text" name="aadhar_number" placeholder="Aadhar Number" required><br>
+            <select name="card_type" required>
+                <option value="" disabled selected>Select Card Type</option>
+                <option value="blue">Blue Card</option>
+                <option value="pink">Pink Card</option>
+                <option value="white">White Card</option>
+                <option value="yellow">Yellow Card</option>
+            </select><br>
+            <input type="password" name="password" placeholder="Password" required><br>
+            <input type="password" name="confirm_password" placeholder="Confirm Password" required><br>
+            <input type="submit" value="Register" class="button">
+        </form>
+    </div>
+</body>
+</html>

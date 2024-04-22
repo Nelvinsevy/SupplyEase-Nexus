@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+</head>
+<body>
+    <h1>Cart</h1>
+    <div id="cart-items"></div>
+    <p>Total Price: ₹<span id="total-price">0</span></p>
+
+    <script>
+        // Retrieve cart items from local storage
+        let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+        // Display cart items
+        let cartContainer = document.getElementById('cart-items');
+        let totalPrice = 0;
+        cartItems.forEach(item => {
+            let itemElement = document.createElement('div');
+            itemElement.innerHTML = `
+                <img src="${item.image}" alt="${item.name}" width="50">
+                <p>${item.name}</p>
+                <p>Price: ₹${item.price} per ${item.quantity > 1 ? 'kilograms' : 'kilogram'}</p>
+                <p>Quantity: ${item.quantity}</p>
+                <p>Total: ₹${item.price * item.quantity}</p>
+            `;
+            cartContainer.appendChild(itemElement);
+            totalPrice += item.price * item.quantity;
+        });
+
+        // Display total price
+        document.getElementById('total-price').textContent = totalPrice;
+    </script>
+</body>
+</html>

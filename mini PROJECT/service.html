@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Available - YELLOW Card</title>
+    <style>
+       
+        /* Your existing CSS styles */
+        /* ... */
+
+        /* Styles for the scroll-to-top button */
+        #scroll-to-top-btn {
+            position: fixed;
+            bottom: 80px;
+            right: 0px;
+            background-color: rgb(206, 221, 69,0.5);
+            color: rgb(0, 0, 0);
+           /* padding: 10px 20px;*/
+           height: 50px;
+           width: 60px;
+            margin: 25px;
+           /* border: none;*/
+            border-radius: 90%;
+            cursor: pointer;
+            transition: 0.5s ;
+            display: none; /* Initially hide the button */
+        }
+        #scroll-to-top-btn:hover {
+            background-color: #ffffffe3;
+        }
+    
+        body {
+            
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+.location-option:hover {
+    background-color:  #f8e70580;
+    color: #000000; /* Change text color to white when hovering */
+}
+        button {
+            margin-top: 10px;
+            background-color: #f3fb0561;
+            color: rgb(0, 0, 0);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        button:hover {
+            background-color: #dceb0c80;
+        }
+        .top-buttons {
+            position: relative;
+            top: 0;
+            left: 0;
+            background-color: #dceb0c80;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* Align items to both ends */
+            width: 100%; /* Occupy full width */
+          /* z-index: 1000;*/
+            
+        }
+        .left-buttons {
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        .right-buttons {
+            display: flex;
+            align-items: center;
+        }
+        .profile-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .profile-dropdown .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 120px;
+            box-shadow: 0px 8px 16px 0px rgba(238, 230, 5, 0.2);
+            z-index: 1;
+            
+        }
+        .profile-dropdown .dropdown-content a {
+            color: rgb(0, 0, 0);
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .profile-dropdown .dropdown-content a:hover {
+            background-color: #dceb0c80;
+        }
+        
+        .profile-dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px #dceb0c80;
+            z-index: 1;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .dropdown-content a {
+            color: rgb(11, 11, 11);
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {
+            background: rgba(0rgb(241, 241, 241) 0.5);
+        }
+        .selected-location {
+            position: absolute;
+        top: 100%; /* Position directly under the location button */
+        left: 0;
+        background: rgba(0, 0, 0, 0.5);
+        padding: 10px;
+        border-radius: 5px;
+        color: white;
+        margin-top: 10px;}
+        #headimg{
+            width:100%;
+   height:550px;
+   object-fit:cover;
+   object-position:50% 50%;
+
+        }
+        .running{
+            color: #dceb0c80;
+            
+    
+        }
+       
+    #headimg {
+        width: 100%;
+        height: 550px;
+        object-fit: cover;
+        object-position: 50% 50%;
+    }
+    .running {
+        color: #00000080;
+    }
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .grocery-item {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 10px;
+        margin-bottom: 20px;
+        width: calc(25% - 20px);
+    }
+    .grocery-item img {
+        width: 100%;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+    .add-to-cart-btn {
+        background-color: #dceb0c80;
+        color: #000000;
+        padding: 8px 16px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .add-to-cart-btn:hover {
+        background-color: #bdca0680;
+    }
+    footer {
+            background-color: #dceb0c80;
+            color: #000000;
+           margin-top: 10px;
+            text-align: center;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            height:50px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-buttons">
+        <div class="left-buttons">
+            <button>HOME</button>
+            <div class="dropdown">
+                <button class="location-button">LOCATION</button>
+                <div class="dropdown-content">
+                    <a href="#" class="location-option">Aluva</a>
+                    <a href="#" class="location-option">Angamaly</a>
+                    <a href="#" class="location-option">Manjapra</a>
+                     <a href="#" class="location-option">kochi</a>
+                     <a href="#" class="location-option">Muttom</a>
+                     <a href="#" class="location-option">Munnar</a>
+                     <a href="#" class="location-option">Manjali</a>
+                    <a href="#" class="location-option">Manjumal</a>
+                    <a href="#" class="location-option">Marittichod</a>
+                    <a href="#" class="location-option">Thekkady</a>
+                    <a href="#" class="location-option">Alappuzha</a>
+                    <!-- Add more locations here -->
+               </div>
+            </div>
+            <div class="selected-location"> Location: <span id="selected-location-text">-</span></div>
+            <button>SERVICE</button>
+            
+        </div>
+        <div class="right-buttons">
+            <div class="profile-dropdown">
+                <button class="profile-button">PROFILE</button>
+                <div class="dropdown-content">
+                    <a href="#">Edit Profile</a>
+                    <a href="#">Sign Out</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const locationOptions = document.querySelectorAll('.location-option');
+            const selectedLocationText = document.getElementById('selected-location-text');
+    
+            locationOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    selectedLocationText.textContent = this.textContent;
+                });
+            });
+        });
+    </script>
+    <div class="imagesec">
+        <img id="headimg"src="ilovesupplyco.jpeg" >
+    </div>
+    <div class="running">
+        <marquee ><h2>The tax credit is no longer available to employers who hire students in approved work-based learning programs.Comparison to Federal StandardsThere is no corresponding federal standard to this proposed action.Estimate of Economic ImpactThe proposed action has no economic impact.Economic Impact on Small BusinessesThe proposed action has minimal or no economic impact on small businesses.Impact on Individuals with DisabilitiesThe proposed action has no impact on individuals with disabilities.</h2></marquee>
+        </div>
+    
+
+
+
+
+    </div>
+    <div class="container">
+        <div class="grocery-item">
+            <img src=rice.jpg alt="Rice">
+            <h3>RICE</h3>
+            <p>Quantity: 10kg</p>
+            <p>Price: MRP:110</p>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+        <div class="grocery-item">
+            <img src="curry powder.jpg "alt="Item 2">
+            <h3>CURRY POWDER</h3>
+            <p>Quantity: 2</p>
+            <p>MRP:50</p>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+        <div class="grocery-item">
+            <img src="cooking oil.jpg" alt="Item 2">
+            <h3>COOKING OIL</h3>
+            <p>Quantity: 1</p>
+            <p>MRP:90</p>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div> <div class="grocery-item">
+            <img src="coffee.jpg" alt="Item 2">
+            <h3>COFFEE POWDER</h3>
+            <p>Quantity: 500g</p>
+            <p>MRP:60</p>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+        <div class="grocery-item">
+            <img src="washingpowder.jpg" alt="Item 2">
+            <h3>WASHING POWDER</h3>
+            <p>Quantity: 1kg</p>
+            <p>MRP:45</p>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+        <div class="grocery-item">
+            <img src="wheat.jpg" alt="Item 2">
+            <h3>WHEAT POWDER</h3>
+            <p>Quantity: 1kg</p>
+            <p>MRP:40</p>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+        <div class="grocery-item">
+            <img src="Masala-Tea.jpg" alt="Item 2">
+            <h3>TEA POWDER</h3>
+            <p>Quantity: 1kg</p>
+            <p>MRP:45</p>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div><div class="grocery-item">
+            <img src="soap.jpg" alt="Item 2">
+            <h3>SOAP</h3>
+            <p>Quantity: 2</p>
+            <p>Price:60</p>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div><div class="grocery-item">
+            <img src="boost.jpg" alt="Item 2">
+            <h3>BOOST</h3>
+            <p>Quantity: 1kg</p>
+            <p>MRP:110</p>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+    </div>
+        <!-- Add more grocery items here -->
+    </div>
+ 
+ <!-- Your existing HTML content -->
+
+    <!-- Scroll-to-top button -->
+    <button id="scroll-to-top-btn" onclick="scrollToTop()"><b><h2>↑</h2></b></button>
+
+    <!-- Your existing HTML content -->
+
+    <!-- JavaScript code -->
+    <script>
+        // Function to scroll to the top of the page
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth' // Smooth scrolling animation
+            });
+        }
+
+        // Show or hide the scroll-to-top button based on page scroll position
+        window.onscroll = function() {
+            var scrollBtn = document.getElementById('scroll-to-top-btn');
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                scrollBtn.style.display = 'block';
+            } else {
+                scrollBtn.style.display = 'none';
+            }
+        };
+    </script>
+     <footer>
+        <p>&copy; 2024 SupplyEase Nexus. All rights reserved.</p>
+    </footer>
+    
+</body>
+</html>

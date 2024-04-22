@@ -1,0 +1,30 @@
+<?php
+// Check if the form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Validate and sanitize form inputs
+    $name = htmlspecialchars($_POST["name"]);
+    $address = htmlspecialchars($_POST["address"]);
+    $aadhar_number = htmlspecialchars($_POST["aadhar_number"]);
+    $card_type = htmlspecialchars($_POST["card_type"]);
+    $password = htmlspecialchars($_POST["password"]);
+    $confirm_password = htmlspecialchars($_POST["confirm_password"]);
+
+    // Perform additional validation as needed (e.g., check password strength, validate Aadhar number format)
+
+    // If passwords match, proceed with registration
+    if ($password === $confirm_password) {
+        // You can perform database operations to store the user information here
+
+        // Redirect to the success page
+        header("Location: success.html");
+        exit(); // Make sure to exit after redirection to prevent further script execution
+    } else {
+        // Passwords don't match, display an error message
+        echo "Passwords do not match. Please try again.";
+    }
+} else {
+    // Redirect back to the registration page if the form is not submitted
+    header("Location: register.html");
+    exit(); // Make sure to exit after redirection to prevent further script execution
+}
+?>
